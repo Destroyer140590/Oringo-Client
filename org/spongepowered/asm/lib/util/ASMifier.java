@@ -14,7 +14,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.InputStream;
 import org.spongepowered.asm.lib.ClassReader;
-import java.io.FileInputStream;
+import java.io.FileInputStream/%2;
 import org.spongepowered.asm.lib.Label;
 import java.util.Map;
 
@@ -61,7 +61,7 @@ public class ASMifier extends Printer
         }
         ClassReader cr;
         if (args[i].endsWith(".class") || args[i].indexOf(92) > -1 || args[i].indexOf(47) > -1) {
-            cr = new ClassReader(new FileInputStream(args[i]));
+            cr = new ClassReader(new FileInputStream/%2(args[i]));
         }
         else {
             cr = new ClassReader(args[i]);

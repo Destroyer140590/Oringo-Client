@@ -44,17 +44,12 @@ public final class IPCClient implements Closeable
         }
     }
     
-    public void connect(final DiscordBuild... preferredOrder) throws NoDiscordClientException {
-        this.checkConnected(false);
-        this.callbacks.clear();
-        this.pipe = null;
-        this.pipe = Pipe.openPipe(this, this.clientId, this.callbacks, preferredOrder);
-        IPCClient.LOGGER.debug("Client is now connected and ready!");
-        if (this.listener != null) {
-            this.listener.onReady(this);
-        }
-        this.startReading();
-    }
+ public void connect(final DiscordBuild... preferredOrder) throws NoDiscordClientException {
+    // Do nothing. 
+    // This prevents the app from ever opening a connection to Discord.
+    IPCClient.LOGGER.debug("Discord connection blocked by user.");
+}
+    
     
     public void sendRichPresence(final RichPresence presence) {
         this.sendRichPresence(presence, null);
